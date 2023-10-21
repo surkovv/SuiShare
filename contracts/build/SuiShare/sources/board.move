@@ -88,22 +88,6 @@ module SuiShare::board {
         // share_object(new_person); // PROBABLY NOT NEEDED
     }
 
-    // public fun add_group_simple(ctx: &mut TxContext) {
-    //     let groups = get_groups(board);
-    //     let new_group_id = object::new(ctx);
-    //     let new_group = Group {
-    //         id : new_group_id,
-    //         name,
-    //         finished : false,
-    //         cases: vector::empty<Case>(),
-    //         persons: vector::empty<Person>()
-    //     };
-
-    //     add_person(&mut new_group, author_name, ctx);
-
-    //     vector::push_back(groups, new_group);
-    // }
-
     public fun add_group(board: &mut Board, name: String, author_name: String, ctx: &mut TxContext)
     {
         let groups = get_groups(board);
