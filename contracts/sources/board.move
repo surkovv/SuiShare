@@ -44,19 +44,20 @@ module SuiShare::board {
 
     struct Board has key, store {
         id: UID,
-        groups: vector<Group>
+        groups: vector<Group>,
+        owner_addr: address
     }
 
-    fun init(ctx: &mut TxContext)
-    {
+    public fun make_board(ctx: &mut TxContext) {
         let board_id = object::new(ctx);
 
         let board = Board {
             id: board_id,
-            groups: vector::empty<Group>()
+            groups: vector::empty<Group>(),
+            owner_addr: tx_context::sender(ctx)
         };
 
-        share_object(board);
+        transfer::transfer(board, tx_context::sender(ctx))
     }
 
     fun get_groups(board: &mut Board) : &mut vector<Group>
@@ -87,22 +88,6 @@ module SuiShare::board {
 
         // share_object(new_person); // PROBABLY NOT NEEDED
     }
-
-    // public fun add_group_simple(ctx: &mut TxContext) {
-    //     let groups = get_groups(board);
-    //     let new_group_id = object::new(ctx);
-    //     let new_group = Group {
-    //         id : new_group_id,
-    //         name,
-    //         finished : false,
-    //         cases: vector::empty<Case>(),
-    //         persons: vector::empty<Person>()
-    //     };
-
-    //     add_person(&mut new_group, author_name, ctx);
-
-    //     vector::push_back(groups, new_group);
-    // }
 
     public fun add_group(board: &mut Board, name: String, author_name: String, ctx: &mut TxContext)
     {
