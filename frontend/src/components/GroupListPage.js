@@ -69,7 +69,7 @@ function GroupListPage() {
             <div className="list">
                 {
                     groups['group_list'].map((item, idx)=>{
-                        return <div><Link to={`/group/${idx}`}><div className="item" key={item['name']}>
+                        return <div><Link style={{textDecoration: 'none', color: 'black'}} to={`/group/${idx}`}><div className="item" key={item['name']}>
                             <div className="group_name">{item['name']}</div>
                             <div className="members">
                                 <div style={{color: "red", fontWeight: "bold"}}>Members:</div>

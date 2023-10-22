@@ -46,7 +46,7 @@ function App() {
         {/* <Switch> */}
         <Route path='/group/:idx' element={<GroupPage/>}/>
         {/* </Switch> */}
-        <Route path='/balance' exact element={<BalancePage/>}/>
+        <Route path='/balance/:idx' element={<BalancePage/>}/>
         <Route path='/new_group' exact element={<NewGroupPage/>}/>
         <Route path='/new_transaction' exact element={<NewTransactionPage/>}/>
       </Routes>
