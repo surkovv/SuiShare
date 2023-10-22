@@ -1,8 +1,13 @@
+/* body {
+    height: 100%;
+    background-image: url("../public/background.png");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    background-size: cover;
+} */
+
 .welcome_page {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -28,7 +33,7 @@
 }
 
 .welcome_page .button:hover {
-    background-color: gray;
+    background-color: darkgrey;   
 }
 
 

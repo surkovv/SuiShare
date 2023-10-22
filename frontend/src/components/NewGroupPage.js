@@ -9,7 +9,25 @@ function NewGroupPage() {
                 <div className="title"> SuiShare </div>
                 <div className="username">{mock['username']}</div>
             </div>
-            <div></div>
+            <div className='group_name'>
+                <label>Group name</label>
+                <input
+                    name='name'
+                    type='text'
+                />
+            </div>
+            <div className='user_name'>
+                <label>Your name in this group</label>
+                <input
+                    name='name'
+                    type='text'
+                />
+            </div>
+            <div className='button'>
+                Create new group
+            </div>
+
+
         </div>
     )
 }

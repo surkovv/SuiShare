@@ -1,10 +1,17 @@
 import React from "react";
 import "../styles/BalancePage.css"
 import mock from "../mock_data.json"
+import { useParams } from "react-router-dom";
+import groups_parser from "../utils";
+import { ethos, SignInButton } from "ethos-connect"
+import { useState } from "react";
+import { TransactionBlock } from "@mysten/sui.js/transactions"
+import { Link } from "react-router-dom";
+import config from "../config.json";
 
 function BalancePage() {
-    let i = 0;
-    let balance = mock['group_list'][i]['balance'];
+    let { idx } = useParams();
+    let balance = mock['group_list'][idx]['balance'];
     console.log(balance)
     return (
         <div className={"balance_page"}>
