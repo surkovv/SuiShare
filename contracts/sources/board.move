@@ -212,8 +212,31 @@ module SuiShare::board {
 
     }
 
+    public fun collect_money(group_index: u64, board: &mut Board, ctx: &mut TxContext) {
 
+        let groups = get_groups(board);
+        let group = vector::borrow_mut(groups, group_index);
 
+        let persons = get_persons(group);
+        let persons_count = vector::length(persons);
+
+        let sender_addr = sui::tx_context::sender(ctx);
+
+        let i = 0;
+        while (i < persons_count) {
+            let person = vector::borrow_mut(persons, i);
+            if (person.addr == sender_addr) {
+                
+                let amount = balance::value(&person.balance);
+                let profits = coin::take(&mut person.balance, amount, ctx);
+
+                transfer::public_transfer(profits, sender_addr)
+            };
+
+            i = i + 1;
+        };
+
+    }
 
 
 }
