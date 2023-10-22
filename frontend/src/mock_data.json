@@ -1,0 +1,45 @@
+{
+    "username": "Douchenilain",
+    "group_list": [
+        {
+            "name": "Sui Hack Food",
+            "members": ["Jack", "Mary", "Alice"],
+            "transactions": [
+                {
+                    "name": "Pizza",
+                    "buyer": "Jack",
+                    "users": ["Jack", "Mary"],
+                    "amount": 200
+                },
+                {
+                    "name": "Sushi",
+                    "buyer": "Alice",
+                    "users": ["Alice", "Mary", "Jack"],
+                    "amount": 300
+                }
+            ],
+            "balance": [
+                ["Jack", 200],
+                ["Mary", 100],
+                ["Alice", -300]
+            ]
+        },
+        {
+            "name": "Trip to Paris",
+            "members": ["Alice", "Bob", "Eva"],
+            "transactions": [
+                {
+                    "name": "Train",
+                    "buyer": "Eva",
+                    "users": ["Bob"],
+                    "amount": 100
+                }
+            ],
+            "balance": [
+                ["Alice", 200],
+                ["Bob", 100],
+                ["Eva", -300]
+            ]
+        }
+    ]
+}

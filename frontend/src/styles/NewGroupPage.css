@@ -1,0 +1,49 @@
+.new_group_page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.new_group_page .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.new_group_page .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 10px;
+}
+
+.new_group_page .username {
+    align-self: right;
+    margin-right: 50px;
+    font-style: italic;
+}
+
+.new_group_page > div {
+    margin: 10px;
+}
+
+.new_group_page input {
+    margin-left: 5px;
+}
+
+.new_group_page .button {
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+    font-size: normal;
+}
+
+.new_group_page .button:hover {
+    background-color: gray;
+}
