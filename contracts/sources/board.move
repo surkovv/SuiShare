@@ -16,6 +16,7 @@ module SuiShare::board {
     struct Debt has key, store {
         id: UID,
         addr: address, // the address of the person to whom the debt is dedicated
+        name: String,
         val: u64 // amount of debt
     }
 
@@ -117,11 +118,13 @@ module SuiShare::board {
     public fun add_debt(person: &mut Person, val: u64, ctx: &mut TxContext)
     {
         let new_debt_id = object::new(ctx);
+        
 
         let new_debt = Debt {
             id: new_debt_id,
             addr: sui::tx_context::sender(ctx),
-            val
+            name: person.name,
+            val: val
         };
 
         vector::push_back(&mut person.debts, new_debt);
