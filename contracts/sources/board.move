@@ -115,7 +115,7 @@ module SuiShare::board {
         return &mut group.cases
     }
 
-    public fun add_debt(person: &mut Person, val: u64, ctx: &mut TxContext)
+    public fun add_debt(person: &mut Person, buyer_name: String, val: u64, ctx: &mut TxContext)
     {
         let new_debt_id = object::new(ctx);
         
@@ -123,7 +123,7 @@ module SuiShare::board {
         let new_debt = Debt {
             id: new_debt_id,
             addr: sui::tx_context::sender(ctx),
-            name: person.name,
+            name: buyer_name,
             val: val
         };
 
@@ -156,14 +156,23 @@ module SuiShare::board {
         let persons_count = vector::length(persons);
         let splited_value = val / persons_count;
 
-        let i = 0;
-        while (i < persons_count) {
-            let person = vector::borrow_mut(persons, i);
-            if (person.addr != sender_addr) {
-                add_debt(person, splited_value, ctx);
+        let j = 0;
+        while (j < persons_count) {
+            let p = vector::borrow_mut(persons, j);
+            if (p.addr == sender_addr) {
+                let buyer_name = p.name;
+                let i = 0;
+                while (i < persons_count) {
+                    let person = vector::borrow_mut(persons, i);
+                    if (person.addr != sender_addr) {
+                        add_debt(person, buyer_name, splited_value, ctx);
+                    };
+
+                    i = i + 1;
+                };
             };
 
-            i = i + 1;
+            j = j + 1;
         };
 
     }
