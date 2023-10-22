@@ -127,8 +127,11 @@ module SuiShare::board {
         // share_object(new_debt); // PROBABLY NOT NEEDED
     }
 
-    public fun add_case(group: &mut Group, val: u64, name: String, ctx: &mut TxContext)
-    {
+    public fun add_case(group_index: u64, board: &mut Board, val: u64, name: String, ctx: &mut TxContext)
+    {   
+        let groups = get_groups(board);
+        let group = vector::borrow_mut(groups, group_index);
+
         let cases = get_cases(group);
         let sender_addr = sui::tx_context::sender(ctx);
 
@@ -165,8 +168,10 @@ module SuiShare::board {
         return &mut person.debts
     }
 
-    public entry fun pay_debt(
-        group: &mut Group, payment: &mut Coin<SUI>, ctx: &mut TxContext) {
+    public entry fun pay_debt(group_index: u64, board: &mut Board, payment: &mut Coin<SUI>, ctx: &mut TxContext) {
+
+        let groups = get_groups(board);
+        let group = vector::borrow_mut(groups, group_index);
 
         let sender_addr = sui::tx_context::sender(ctx);
 
