@@ -4,6 +4,7 @@
 
 
 SuiShare is a convenient and reliable instrument designed to assist friends, couples, and business partners in sharing common payments, all powered by the Sui blockchain.
+
 Made on the EPFL SUI x BSA Student Hackathon first edition, from the 21st to the 22nd of October 2023 in 24h.
 
 ## Table of Contents
