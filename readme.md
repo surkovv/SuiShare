@@ -4,6 +4,7 @@
 
 
 SuiShare is a convenient and reliable instrument designed to assist friends, couples, and business partners in sharing common payments, all powered by the Sui blockchain.
+Made on the EPFL SUI x BSA Student Hackathon first edition, from the 21st to the 22nd of October 2023 in 24h.
 
 ## Table of Contents
 
@@ -16,6 +17,7 @@ SuiShare is a convenient and reliable instrument designed to assist friends, cou
 ## Project Links
 
 - [GitHub Repository](https://github.com/surkovv/SuiShare)
+- [First try prototype demo video](https://youtu.be/uidhDHTWf04)
 
 ## Team
 
@@ -45,4 +47,6 @@ SuiShare leverages a range of technologies to offer a seamless experience:
 - Move
 - Sui
 - SuiET
+
+![SuiShare landing page](https://github.com/surkovv/SuiShare/assets/114303420/95609395-30dc-49bd-a856-c3afeb4cb8b3)
 
