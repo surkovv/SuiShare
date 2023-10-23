@@ -1,6 +1,7 @@
 # SuiShare
 
-![SuiShare Logo]([insert_logo_url_here](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fhackathons%2F31bdc16ef61a4b2e9086a85980627efc%2Fprojects%2F9acb22835a2f4f28895ddcbd3e1d3dd3%2F74c4a5fe-7002-4a86-a370-87c82df5574f.jpeg&w=1440&q=75))
+![SuiShare Logo](https://github.com/surkovv/SuiShare/assets/114303420/758067d0-e702-48cf-8ad6-736aad82fc03)
+
 
 SuiShare is a convenient and reliable instrument designed to assist friends, couples, and business partners in sharing common payments, all powered by the Sui blockchain.
 
